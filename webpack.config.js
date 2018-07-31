@@ -4,7 +4,7 @@ var webpack = require('webpack');
 module.exports = {
   devtool: 'eval',
   entry: [
-    'webpack-dev-server/client?http://localhost:3000',
+    'webpack-dev-server/client?https://boiling-crag-38750.herokuapp.com',
     './src/index'
   ],
   output: {
@@ -27,7 +27,6 @@ module.exports = {
     }]
   },
   devServer: {
-    disableHostCheck: true,
-    // other options
+    disableHostCheck: true
   } 
 };
