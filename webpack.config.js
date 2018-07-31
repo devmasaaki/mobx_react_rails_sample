@@ -25,5 +25,9 @@ module.exports = {
       ],
       include: path.join(__dirname, 'src')
     }]
-  }
+  },
+  devServer: {
+    disableHostCheck: true,
+    // other options
+  } 
 };
