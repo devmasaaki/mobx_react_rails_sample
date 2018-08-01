@@ -17,18 +17,28 @@ class FormState {
         birthday: moment()
     };
 
-    @observable formulation_info = {};
-    @observable ingredient_info = {};
+    @observable formulation_info = [];
+    @observable ingredient_info = [];
     @observable ingredient_per = {};
 
     constructor() {
-        axios.get('https://afternoon-escarpment-32812.herokuapp.com/get_all_formulations')
+        const self = this;
+
+        axios.get('http://localhost:3000/get_all_formulations')
           .then(function (response) {
-            console.log(response);
+            self.formulation_info = response.data.slice();
           })
           .catch(function (error) {
             console.log(error);
-          });
+        });
+
+        axios.get('http://localhost:3000/get_all_ingredients')
+          .then(function (response) {
+            self.ingredient_info = response.data.slice();
+          })
+          .catch(function (error) {
+            console.log(error);
+        });
     }
 
     setPatientName = e => {

@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 import {observer} from 'mobx-react';
-
 import DatePicker from 'react-datepicker';
 
 @observer
